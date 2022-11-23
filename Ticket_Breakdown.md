@@ -25,9 +25,21 @@ Create a new table called CustomAgents that will hold facilityID, agentID, custo
     agent_id int NOT NULL,
     custom_agent_id int NOT NULL
     );
+
+Acceptance Criteria: 
+- The new table must require all values and accept only integers.
+
+Expected Time: 
+- < 1 day
     
 
 ### Ticket 2
 Update functions to do a join that incorperates the new custom IDs of the agents
 - `getShiftsByFacility` will be updated to do a second join on the new CustomAgents table that will join on the agentID to now add the customAgentID to the result 
 - `generateReport` will remain unchanged, but should now create a pdf that includes the agent's custom ID
+
+Acceptance Criteria: 
+- The updated function should return the facilty shifts, including the agents who worked them and the facility's custom ID for each agent if applicable.
+
+Expected Time: 
+- < 1 day
